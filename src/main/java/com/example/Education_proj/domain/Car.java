@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class Car {
   @Id
@@ -18,9 +20,14 @@ public class Car {
   
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "owner")
+  @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
   private Owner owner;
 
-  //Getter and setter
+  public Car() {
+
+}
+
+//Getter and setter
   public Owner getOwner() {
     return owner;
   }

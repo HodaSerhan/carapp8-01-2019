@@ -27,7 +27,10 @@ public class Owner {
      private String firstname, lastname;
    
      @OneToMany(cascade = CascadeType.ALL, mappedBy="owner")
+     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+	@JsonIgnore
      private List<Car> cars;
+
      //Getter and setter
      public List<Car> getCars() {
        return cars;
