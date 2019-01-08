@@ -29,7 +29,7 @@ public class Car {
     this.owner = owner;
   }
   
-  @ManyToMany(mappedBy = "cars") 
+/*  @ManyToMany(mappedBy = "cars") 
   private Set<Trip> Trips; 
 
 public Set<Trip> getTrips() {
@@ -38,7 +38,7 @@ public Set<Trip> getTrips() {
 
 public void setTrips(Set<Trip> trips) {
 	Trips = trips;
-}
+}*/
 public Car(String brand, String model, String color, String registerNumber, int year, int price,Owner owner) {
 	super();
 	this.brand = brand;
